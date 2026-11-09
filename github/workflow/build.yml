@@ -1,0 +1,31 @@
+name: Android Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Downloads your project code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Sets up Java 17
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Gives permission to run Gradle
+      - name: Make Gradle executable
+        run: chmod +x gradlew
+
+      # Builds and tests the Android project
+      - name: Build project
+        run: ./gradlew build
