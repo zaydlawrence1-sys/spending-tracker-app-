@@ -1,5 +1,5 @@
 package com.example.spendingtrackerapp
-
+//Student number: ST10545838 Name: Zayd Surname: Lawrence 
 import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
